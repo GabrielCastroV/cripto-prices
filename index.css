@@ -1,0 +1,121 @@
+*,
+::before,
+::after{
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+}
+*{
+    margin: 0;
+}
+body{
+    background: linear-gradient(#141f39,#152653);
+    font-family: 'Inter', sans-serif;
+    font-family: 'Lato', sans-serif;
+}
+#container{
+    height: 100vh;
+}
+img{
+    margin: 6rem 0rem;
+    height: 70%;
+    object-fit: cover;
+    display: none;
+}
+#title{
+    color: #f8fafc;
+    display: flex;
+    justify-content: center;
+}
+.title{
+    color: #6C63FF;
+}
+#coin-container{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    height: 100vh;
+}
+.coin-input-container{
+    color: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+#coin-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1rem;
+    border: 1px solid #020617;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: #475569;
+}
+.coin-info{
+    border: 1px solid #020617;
+    margin: 1rem;
+    color: #f8fafc;
+    background-color: #475569;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1rem;
+    display: none;
+}
+.price{
+    font-weight: 700;
+}
+.coin-input{
+    outline: none;
+    border-radius: 0.2rem;
+    padding: 0.3rem;
+    font-size: 1rem;
+}
+#form-btn{
+    border-radius: 0.2rem;
+    padding: 0.3rem;
+    font-size: 1rem;    
+    background-color: #6C63FF;
+    color: #f8fafc;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+#form-btn:hover{
+    background-color: #625be8; 
+}
+.show{
+    display: block;
+}
+@media (min-width: 768px){
+    #coin-container{
+        margin: 0rem 4rem;
+    }
+}
+@media (min-width: 1024px){
+    img{
+        display: block;
+    }
+    #coin-form{
+        margin: 0rem;
+    }
+    #container{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .coin-info{
+        margin: 0rem;
+        padding: 1rem;
+    }
+    #coin-container{
+        margin: 0rem;
+    }
+}
+@media (min-width: 1440px){
+    #coin-container{
+        width: 30rem;
+    }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Prices</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <img src="cripto-img/undraw_crypto_portfolio_2jy5.svg" alt="">
+        <div id="coin-container">
+            <h1 id="title">Crypto <span class="title">Price</span></h1>
+            <form id="coin-form">
+                <div class="coin-input-container">
+                    <label for="coin">ELIGE TU MONEDA</label>
+                    <select class="coin-input" id="coin">
+                        <option selected disabled>Selecciona una moneda</option>
+                        <option value="USD">Dolar Estadounidense</option>
+                        <option value="EUR">Euro</option>
+                        <option value="ARS">Pesos Argentinos</option>
+                        <option value="VES">Bolívar</option>
+                    </select>
+                </div>
+                <div class="coin-input-container">
+                    <label for="crypto">ELIGE TU CRIPTOMONEDA</label>
+                    <select class="coin-input" id="crypto">
+                        <option selected disabled>Selecciona una criptomoneda</option>
+                        <option value="BTC">Bitcoin</option>
+                        <option value="ETH">Ethereum</option>
+                        <option value="AXS">AXS</option>
+                        <option value="BNB">Binance Coin</option>
+                    </select>
+                </div>
+                <div class="coin-input-container">
+                    <label for="amount">ESCRIBE EL MONTO</label>
+                    <input type="text" class="coin-input" id="amount" placeholder="Monto" autocomplete="off">
+                </div>
+                <button type="submit" id="form-btn">COTIZAR</button>
+            </form>
+            <div class="coin-info">
+                <p class="info">El precio es: <span class="price">22434$</span></p>
+                <p class="info">El precio más alto del día es: <span class="price">23423$</span></p>
+                <p class="info">El precio más bajo del día es: <span class="price">12321$</span></p>
+                <p class="info">Variacion 24h: <span class="price">+2%</span></p>
+                <p class="info">Puedes comprar: <span class="price">0.3 ETH</span></p>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

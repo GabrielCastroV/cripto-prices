@@ -3,13 +3,15 @@ const coin = document.querySelector('#coin');
 const crypto = document.querySelector('#crypto');
 const amount = document.querySelector('#amount');
 const coinInfo = document.querySelector('.coin-info');
+const loader = document.querySelector('.loader')
 
 form.addEventListener('submit', async e =>{
     e.preventDefault();
     const coinSelected = [...coin.children].find(option => option.selected).value;
     const cryptoSelected = [...crypto.children].find(option => option.selected).value;
     const amountValue = amount.value;
-
+    loader.classList.add('show')
+    coinInfo.classList.remove('show')
     try {
         const response = await (await fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${cryptoSelected}&tsyms=${coinSelected}`)).json();
         const price = response.DISPLAY[cryptoSelected][coinSelected].PRICE;
@@ -17,7 +19,7 @@ form.addEventListener('submit', async e =>{
         const lowerPrice = response.DISPLAY[cryptoSelected][coinSelected].LOW24HOUR;
         const change24h = response.DISPLAY[cryptoSelected][coinSelected].CHANGEPCT24HOUR;
         if (amountValue !== '') {
-            const resultado = amountValue / response.RAW[cryptoSelected][coinSelected].PRICE;
+            const resultado = Number(amountValue) / response.RAW[cryptoSelected][coinSelected].PRICE;
             coinInfo.innerHTML = `
             <p class="info">El precio es: <span class="price">${price}</span></p>
             <p class="info">El precio más alto del día es: <span class="price">${higherPrice}</span></p>
@@ -33,10 +35,11 @@ form.addEventListener('submit', async e =>{
             <p class="info">Variacion 24h: <span class="price">${change24h} %</span></p>
             `;
         };
-
+        loader.classList.remove('show')
         coinInfo.classList.add('show');
 
     } catch (error) {
+        loader.classList.remove('show')
         alert('error');
     }
 

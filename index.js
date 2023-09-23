@@ -3,15 +3,15 @@ const coin = document.querySelector('#coin');
 const crypto = document.querySelector('#crypto');
 const amount = document.querySelector('#amount');
 const coinInfo = document.querySelector('.coin-info');
-const loader = document.querySelector('.loader')
+const loader = document.querySelector('.loader');
 
 form.addEventListener('submit', async e =>{
     e.preventDefault();
     const coinSelected = [...coin.children].find(option => option.selected).value;
     const cryptoSelected = [...crypto.children].find(option => option.selected).value;
     const amountValue = amount.value;
-    loader.classList.add('show')
-    coinInfo.classList.remove('show')
+    loader.classList.add('show');
+    coinInfo.classList.remove('show');
     try {
         const response = await (await fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${cryptoSelected}&tsyms=${coinSelected}`)).json();
         const price = response.DISPLAY[cryptoSelected][coinSelected].PRICE;
@@ -35,11 +35,11 @@ form.addEventListener('submit', async e =>{
             <p class="info">Variacion 24h: <span class="price">${change24h} %</span></p>
             `;
         };
-        loader.classList.remove('show')
+        loader.classList.remove('show');
         coinInfo.classList.add('show');
 
     } catch (error) {
-        loader.classList.remove('show')
+        loader.classList.remove('show');
         alert('error');
     }
 
